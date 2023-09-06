@@ -1,5 +1,5 @@
 # Recipe Application with Python and Django
-![Recipe App]()
+![2_recipe-overview](https://github.com/KateKeim/recipe-app/assets/110600575/5823f318-32ef-493e-af3b-4b5f5dabfdfe)
 
 Welcome to the Recipe Application! This web application is built using Python and Django and is designed to help you manage and discover your favorite recipes. 
 Whether you're a cooking enthusiast or just looking for meal ideas, this app has you covered.
