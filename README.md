@@ -1,3 +1,8 @@
+# Recipe Application with Python and Django
+![Recipe App]()
+
+Welcome to the Recipe Application! This web application is built using Python and Django and is designed to help you manage and discover your favorite recipes. 
+Whether you're a cooking enthusiast or just looking for meal ideas, this app has you covered.
 ## User Goals ##
 Users should be able to create and modify recipes with ingredients, cooking time, and a difficulty
 parameter that would be automatically calculated by the app. Users should also be able to search for
