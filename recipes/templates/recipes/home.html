@@ -1,27 +1,45 @@
 <!DOCTYPE html>
-<html>
-   <title>
-       Thai Kitchen's Home
-   </title>
-   <body style="background-color: black;">
-    <h1 style="text-align: center;"><span style="color:#FF0000">W</span>
-    <span style="color:#FF1F00">e</span>
-    <span style="color:#FF3D00">l</span>
-    <span style="color:#FF5C00">c</span> 
-    <span style="color:#FF7A00">o</span>
-    <span style="color:#FF9900">m</span> 
-    <span style="color:#FFB800">e&ensp;</span>
-    <span style="color:#FFD600">t</span> 
-    <span style="color:#FFF500">o&ensp;</span>
-    <span style="color:#EBFF00">o</span>
-    <span style="color:#CCFF00">u</span>
-    <span style="color:#ADFF00">r&ensp;</span>
-    <span style="color:#8FFF00">R</span>
-    <span style="color:#70FF00">e</span>
-    <span style="color:#52FF00">c</span> 
-    <span style="color:#33FF00">i</span>
-    <span style="color:#14FF00">p</span>
-    <span style="color:#00FF0A">e</span>
-    <span style="color:#00FF29">s</span></h1>
+<html lang="en">
+
+    <head>
+        <title>Thai Kitchen's Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel='stylesheet' type='text/css' href="{% static 'recipes/css/styles.css' %}">
+        <style type="text/css">
+            body {
+                background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed; 
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30vh;
+            }
+
+        </style>
+    </head>
+   
+    <body style="background-color: black;">
+        <h1 style="text-align: center;"><span style="color:#FF0000">W</span>
+        <span style="color:#FF1F00">e</span>
+        <span style="color:#FF3D00">l</span>
+        <span style="color:#FF5C00">c</span> 
+        <span style="color:#FF7A00">o</span>
+        <span style="color:#FF9900">m</span> 
+        <span style="color:#FFB800">e&ensp;</span>
+        <span style="color:#FFD600">t</span> 
+        <span style="color:#FFF500">o&ensp;</span>
+        <span style="color:#EBFF00">o</span>
+        <span style="color:#CCFF00">u</span>
+        <span style="color:#ADFF00">r&ensp;</span>
+        <span style="color:#8FFF00">R</span>
+        <span style="color:#70FF00">e</span>
+        <span style="color:#52FF00">c</span> 
+        <span style="color:#33FF00">i</span>
+        <span style="color:#14FF00">p</span>
+        <span style="color:#00FF0A">e</span>
+        <span style="color:#00FF29">s</span>
+    </h1>
+    <img src="{% static 'recipes/images/thai-food.png' %}" width="300px">
    </body>
 </html>
