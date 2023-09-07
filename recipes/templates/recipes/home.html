@@ -8,18 +8,36 @@
         <link rel='stylesheet' type='text/css' href="{% static 'recipes/css/styles.css' %}">
         <style type="text/css">
             body {
-                background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed; 
+                background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed;
+                backdrop-filter: brightness(60%); 
                 background-size: cover;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 margin-top: 30vh;
+                padding: 20px;
             }
+
+            .login_btn {
+                display: block;
+                position: inherit;
+                border: 2px solid white;
+                margin: auto;
+                width: 70px;
+                font-size: 16px;
+                background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+                border-radius: 5px;
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                text-align: center;
+                }
 
         </style>
     </head>
    
-    <body style="background-color: black;">
+    <body style="background-color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <img src="{% static 'recipes/images/thai-food.png' %}" width="150px">
         <h1 style="text-align: center;"><span style="color:#FF0000">W</span>
         <span style="color:#FF1F00">e</span>
         <span style="color:#FF3D00">l</span>
@@ -32,14 +50,15 @@
         <span style="color:#EBFF00">o</span>
         <span style="color:#CCFF00">u</span>
         <span style="color:#ADFF00">r&ensp;</span>
-        <span style="color:#8FFF00">R</span>
-        <span style="color:#70FF00">e</span>
-        <span style="color:#52FF00">c</span> 
-        <span style="color:#33FF00">i</span>
-        <span style="color:#14FF00">p</span>
+        <span style="color:#8FFF00">K</span>
+        <span style="color:#70FF00">i</span>
+        <span style="color:#52FF00">t</span> 
+        <span style="color:#33FF00">c</span>
+        <span style="color:#14FF00">h</span>
         <span style="color:#00FF0A">e</span>
-        <span style="color:#00FF29">s</span>
+        <span style="color:#00FF29">n</span>
     </h1>
-    ><img src="{% static 'recipes/images/thai-food.png' %}" width="300px">
+    <h3 style="color: white;">Login to see the recipes.</h3>
+    <a href="{%url 'login' %}" class="login_btn">Login</a>
    </body>
 </html>

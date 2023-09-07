@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +14,27 @@
             background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed;
             background-size: cover;
         }
+
+        .logout_btn,
+        .back-home_btn {
+        display: inline-block;
+        position: inherit;
+        margin: auto;
+        width: 70px;
+        font-family: 'Roboto' sans-serif;
+        font-size: 16px;
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        border-radius: 5px;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+        }
     </style>
 </head>
 
 <body>
-
+    <a href="{%url 'logout' %}" class="logout_btn">Logout</a>
     <div class="recipe_grid">
         {% for object in object_list %}
         <div class="grid_item">
@@ -28,8 +45,9 @@
             </div>
                 <img class="food_images" src="{{object.pic.url}}" />
         </div>
-        {% endfor %}
+        {% endfor %} 
     </div>
+    
 </body>
 
 </html>
