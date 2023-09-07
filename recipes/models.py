@@ -19,9 +19,9 @@ class Recipe(models.Model):
             difficulty = 'Easy'
         elif self.cooking_time < 10 and len(ingredients) >= 7:
             difficulty = 'Medium'
-        elif self.cooking_time >= 10 and len(ingredients) < 7:
+        elif self.cooking_time >= 10 and len(ingredients) <= 6:
             difficulty = 'Intermediate'
-        elif self.cooking_time >= 10 and len(ingredients) >= 7:
+        else:
             difficulty = 'Hard'
         return difficulty
 
