@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>RecipeApp Recipes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'recipe/css/styles.css' %}">
+    <style type="text/css">
+        body {
+            background: url("{% static 'recipe/images/background.jpg' %}") no-repeat fixed;
+            background-size: cover;
+            backdrop-filter: brightness(60%); 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+        }
+
+        .form_data {
+            background-color: rgba(0, 0, 0, 0.61);
+            border-radius: 10px;
+            padding: 20px;
+            color: white;
+        }
+
+        .form_search_input,
+        .form_search {
+            position: fixed;
+            top: 0;
+            background-color: beige;
+            height: 14px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            width: 200px;
+            padding: 10px;
+        }
+
+        .login_btn {
+            display: block;
+            position: inherit;
+            border: 1px solid black;
+            box-shadow: 2px 4px 8px black;
+            margin: auto;
+            width: 70px;
+            font-size: 16px;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<h1 style="font-size: 45px">Search for recipes in our database</h1>
+<hr>
+<form action="" method="POST" class="form_data">
+    {% csrf_token %}
+    {{form}}
+    <button type="submit">Search</button>
+
+</form>
+<br>
+<br>
+{% if recipe_df %}
+{{recipe_df|safe}}
+<br>
+<img alt='chart' src="data:image/jpg;base64, {{chart|safe}}">
+{% else %}
+<h3> no data</h3>
+{% endif %}
+
+<br>
+<button onclick="goBack()" class="login_btn">Back</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</html>

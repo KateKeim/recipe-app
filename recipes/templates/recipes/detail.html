@@ -6,10 +6,10 @@
 <head>
     <title>RecipeApp Details</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'recipes/css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'recipe/css/styles.css' %}">
     <style type="text/css">
         body {
-            background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed;
+            background: url("{% static 'recipe/images/background.jpg' %}") no-repeat fixed;
             background-size: cover;
         }
     </style>
@@ -31,5 +31,10 @@
         </div>
     </div>
 </div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </html>

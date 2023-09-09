@@ -6,35 +6,74 @@
     <title>RecipeApp Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% load static %}
-    <link rel="shortcut icon" href="{% static 'recipes/images/thai-food.png' %}">
+    <link rel="shortcut icon" href="{% static 'recipe/images/thai-food.png' %}">
     <!-- CSS CUSTOM -->
-    <link rel='stylesheet' type='text/css' href="{% static 'recipes/css/styles.css' %}">
+    <link rel='stylesheet' type='text/css' href="{% static 'recipe/css/styles.css' %}">
     <style type="text/css">
         body {
-            background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed;
+            background: url("{% static 'recipe/images/background.jpg' %}") no-repeat fixed;
             background-size: cover;
+        }
+
+        .nav-bar {
+            width: 80vw;
+            height: 7vh;
+            margin: 0 auto;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: start;
+            align-items: center;
         }
 
         .logout_btn,
         .back-home_btn {
-        display: inline-block;
-        position: inherit;
-        margin: auto;
-        width: 70px;
-        font-family: 'Roboto' sans-serif;
-        font-size: 16px;
-        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-        border-radius: 5px;
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        text-align: center;
+            display: block;
+            position: inherit;
+            border: 1px solid black;
+            box-shadow: 2px 4px 8px black;
+            margin: 10px;
+            width: fit-content;
+            font-size: 16px;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
         }
+        
     </style>
 </head>
 
 <body>
-    <a href="{%url 'logout' %}" class="logout_btn">Logout</a>
+    <div class="nav-bar">
+        <div>
+            <a href="{%url 'recipes:search' %}" class="logout_btn">Recipe chart</a>
+        </div>
+        <div>
+            <a href="{%url 'logout' %}" class="logout_btn">Logout</a>
+        </div>
+        <div class="search_box">
+            <form action="" method="GET" class="form">
+                {% csrf_token %}
+                <input type="text" name="recipe_search" class="form_search_input" id="searchbar"
+                    placeholder="Search Recipes" onkeyup="search_recipe()" />
+            </form>
+            <br>
+            <div class="search_results" autocomplete="off" style="display: none;">
+                {% for object in object_list %}
+                <p class="recipe_searched">
+                    <a class="recipe_name"
+                        style="font-size: 18px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                        href="{{object.get_absolute_url}}"> {{object.name}} </a>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+
     <div class="recipe_grid">
         {% for object in object_list %}
         <div class="grid_item">
@@ -47,7 +86,7 @@
         </div>
         {% endfor %} 
     </div>
-    
+    <script src="{% static 'recipe/scripts/script.js' %}"></script>
 </body>
 
 </html>

@@ -5,10 +5,10 @@
         <title>Thai Kitchen's Home</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load static %}
-        <link rel='stylesheet' type='text/css' href="{% static 'recipes/css/styles.css' %}">
+        <link rel='stylesheet' type='text/css' href="{% static 'recipe/css/styles.css' %}">
         <style type="text/css">
             body {
-                background: url("{% static 'recipes/images/background.jpg' %}") no-repeat fixed;
+                background: url("{% static 'recipe/images/background.jpg' %}") no-repeat fixed;
                 backdrop-filter: brightness(60%); 
                 background-size: cover;
                 display: flex;
@@ -17,27 +17,11 @@
                 margin-top: 30vh;
                 padding: 20px;
             }
-
-            .login_btn {
-                display: block;
-                position: inherit;
-                border: 2px solid white;
-                margin: auto;
-                width: 70px;
-                font-size: 16px;
-                background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-                border-radius: 5px;
-                color: white;
-                text-decoration: none;
-                padding: 10px;
-                text-align: center;
-                }
-
         </style>
     </head>
    
     <body style="background-color: black; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-        <img src="{% static 'recipes/images/thai-food.png' %}" width="150px">
+        <img src="{% static 'recipe/images/thai-food.png' %}" width="150px">
         <h1 style="text-align: center;"><span style="color:#FF0000">W</span>
         <span style="color:#FF1F00">e</span>
         <span style="color:#FF3D00">l</span>
