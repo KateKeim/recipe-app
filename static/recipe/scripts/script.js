@@ -7,7 +7,7 @@ function search_recipe() {
     recipe_box[0].style.display = "block";
 
     for (i = 0; i < recipes.length; i++) {
-        if (!recipes[i].innerHTML.toLowerCase().startsWith(input)) {
+        if (!recipes[i].innerHTML.toLowerCase().filter(input)) {
             recipes[i].style.display = "none";
         }
         else {
