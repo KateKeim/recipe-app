@@ -19,6 +19,7 @@
             width: 80vw;
             height: 7vh;
             margin: 0 auto;
+            margin-top: 30px;
             border-radius: 20px;
             background-color: rgba(0, 0, 0, 0.5);
             display: flex;
@@ -33,7 +34,7 @@
             border: 1px solid black;
             box-shadow: 2px 4px 8px black;
             margin: 10px;
-            width: fit-content;
+            width: 90px;
             font-size: 16px;
             background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
             border-radius: 5px;
@@ -48,12 +49,12 @@
         }
 
         #chart_btn {
-            margin-left:30px;
+            margin-left:20px;
         }
 
         .search_box {
             margin-top: 17px;
-            margin-left: 900px;
+            margin-left: 755px;
         }
     </style>
 </head>
@@ -66,6 +67,10 @@
 
         <div>
             <a href="{% url 'create' %}" class="logout_btn">Add Recipe</a>
+        </div>
+
+        <div>
+            <a href="{%url 'about' %}" class="logout_btn">About Me</a>
         </div>
 
         <div>

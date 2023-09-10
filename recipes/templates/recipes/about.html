@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href="{% static 'recipe/css/styles.css' %}">
+    <title>Document</title>
+    <style>
+        body {
+            background: url("{% static 'recipe/images/background.jpg' %}") no-repeat fixed;
+            background-size: cover;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            backdrop-filter: brightness(60%); 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            margin-top: 80px;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .nav-bar {
+            width: 80vw;
+            height: 7vh;
+            margin: 0 auto;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: start;
+            align-items: center;
+        }
+
+        .logout_btn {
+            display: block;
+            position: inherit;
+            border: 1px solid black;
+            box-shadow: 2px 4px 8px black;
+            margin: 10px;
+            width: 80px;
+            font-size: 16px;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .logout_btn:hover {
+            background: linear-gradient(0deg, rgba(34,195,182,1) 0%, rgba(45,53,253,1) 100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+
+        <div>
+            <a href="{%url 'login' %}" class="logout_btn">Login</a>
+        </div>
+
+    </div>
+    <div class="container">
+        <h1>About Me</h1>
+        <p>My name is Kate and I am a passionate Thai chef. I have been cooking Thai food for over 10 years, and I love sharing my recipes with others.</p>
+        <p>I am originally from Thailand, but I have been living in Germany for the past 5 years.</p>
+        <p>I am excited to share my love of Thai food with you through this website. I hope you enjoy my recipes!</p>
+        <img src="media/profile.png" alt="Kate photo" width="230" height="400">
+      </div>      
+      
+</body>
+</html>

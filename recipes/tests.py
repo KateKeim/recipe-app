@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Recipe
 from .forms import RecipesSearchForm
+from .forms import CreateRecipeForm
 
 # Create your tests here.
 
@@ -70,3 +71,54 @@ class RecipesSearchFormTest(TestCase):
     def test_form_invalid_data(self):
         form = RecipesSearchForm(data={'recipe_diff': '', 'chart_type': ''})
         self.assertFalse(form.is_valid())
+
+# ================================= Create Recipe ====================================
+
+
+class CreateRecipeFormTestCase(TestCase):
+
+    def test_valid_form(self):
+        form_data = {
+            'name': 'Spaghetti Carbonara',
+            'cooking_time': 30,
+            'ingredients': 'Pasta, Eggs, Bacon, Parmesan Cheese',
+            'description': 'A classic Italian pasta dish with creamy sauce.'
+        }
+        form = CreateRecipeForm(data=form_data)
+        self.assertTrue(form.is_valid())
+
+    def test_blank_data(self):
+        form_data = {}
+        form = CreateRecipeForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors['name'], ['This field is required.'])
+        self.assertEqual(form.errors['cooking_time'], [
+                         'This field is required.'])
+        self.assertEqual(form.errors['ingredients'], [
+                         'This field is required.'])
+        self.assertEqual(form.errors['description'], [
+                         'This field is required.'])
+
+    def test_invalid_cooking_time(self):
+        form_data = {
+            'name': 'Pizza',
+            'cooking_time': 'Invalid',
+            'ingredients': 'Dough, Tomato Sauce, Cheese',
+            'description': 'A classic Italian dish.'
+        }
+        form = CreateRecipeForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors['cooking_time'], [
+                         'Enter a whole number.'])
+
+    def test_name_length_exceeds_max_length(self):
+        form_data = {
+            'name': 'P' * 256,  # Exceeds max length of 255
+            'cooking_time': 40,
+            'ingredients': 'Cheese, Tomato, Basil',
+            'description': 'A simple Italian dish.'
+        }
+        form = CreateRecipeForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertEqual(form.errors['name'], [
+                         'Ensure this value has at most 255 characters (it has 256).'])

@@ -17,6 +17,10 @@ def home(request):
     return render(request, 'recipes/home.html')
 
 
+def about_view(request):
+    return render(request, 'recipes/about.html')
+
+
 class RecipesListView(LoginRequiredMixin, ListView):
     model = Recipe
     template_name = 'recipes/main.html'
