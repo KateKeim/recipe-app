@@ -4,9 +4,10 @@ from .models import Recipe
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
-from .forms import RecipesSearchForm
+from .forms import RecipesSearchForm, CreateRecipeForm
 import pandas as pd
 from .utils import get_recipename_from_id, get_chart
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 
 # Create your views here.
@@ -71,3 +72,40 @@ def records(request):
     }
 
     return render(request, 'recipes/search.html', context)
+
+
+# @login_required
+def create_view(request):
+    create_form = CreateRecipeForm(request.POST or None, request.FILES)
+    name = None
+    cooking_time = None
+    ingredients = None
+    description = None
+    # pic = None
+
+    if request.method == 'POST':
+
+        try:
+            recipe = Recipe.objects.create(
+                name=request.POST.get('name'),
+                cooking_time=request.POST.get('cooking_time'),
+                ingredients=request.POST.get('ingredients'),
+                description=request.POST.get('description'),
+                # pic=request.POST.get('pic')
+            )
+
+            recipe.save()
+
+        except:
+            print('Error!!!')
+
+    context = {
+        'create_form': create_form,
+        'name': name,
+        'cooking_time': cooking_time,
+        'ingredients': ingredients,
+        'description': description,
+        # 'pic': pic
+    }
+
+    return render(request, 'recipes/create.html', context)

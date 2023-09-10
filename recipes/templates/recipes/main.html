@@ -43,17 +43,35 @@
             text-align: center;
         }
         
+        .logout_btn:hover {
+            background: linear-gradient(0deg, rgba(34,195,182,1) 0%, rgba(45,53,253,1) 100%);
+        }
+
+        #chart_btn {
+            margin-left:30px;
+        }
+
+        .search_box {
+            margin-top: 17px;
+            margin-left: 900px;
+        }
     </style>
 </head>
 
 <body>
     <div class="nav-bar">
         <div>
-            <a href="{%url 'recipes:search' %}" class="logout_btn">Recipe chart</a>
+            <a href="{%url 'recipes:search' %}" class="logout_btn" id="chart_btn">Recipe chart</a>
         </div>
+
+        <div>
+            <a href="{% url 'create' %}" class="logout_btn">Add Recipe</a>
+        </div>
+
         <div>
             <a href="{%url 'logout' %}" class="logout_btn">Logout</a>
         </div>
+
         <div class="search_box">
             <form action="" method="GET" class="form">
                 {% csrf_token %}

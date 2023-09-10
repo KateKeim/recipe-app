@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <style type="text/css">
+        body {
+            background: url("{% static 'recipe/images/background.jpg' %}") no-repeat fixed;
+            background-size: cover;
+            backdrop-filter: brightness(60%); 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .create_btn {
+            display: block;
+            position: static;
+            border: 1px solid black;
+            box-shadow: 2px 4px 8px black;
+            margin: auto;
+            margin-top: 10px;
+            width: 70px;
+            font-size: 16px;
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            padding: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Recipe</h1>
+    <form action="" method="POST" class="form_data" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{create_form.as_p}}
+      <button type="submit" class="create_btn">Add</button>
+      <a class="create_btn" href="{%url 'recipes:list'%}">Back</a>
+    </form>
+</body>
+</html>
