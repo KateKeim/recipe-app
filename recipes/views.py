@@ -65,7 +65,7 @@ def records(request):
             chart = get_chart(chart_type, recipe_df,
                               labels=recipe_df['name'].values)
 
-            recipe_df = recipe_df.to_html()
+            recipe_df = recipe_df.to_html(index=False, escape=False)
 
     context = {
         'form': form,

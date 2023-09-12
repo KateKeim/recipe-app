@@ -1,0 +1,183 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+
+.body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*=============== MAIN PAGE ===============*/
+
+h1 {
+    font-size: 50px;
+    text-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.nav-bar {
+  width: 80vw;
+  height: 7vh;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.recipe_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 23px 0 23px 23px;
+    grid-gap: 23px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 60vw;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.grid_item {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid gray;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 35vh;
+    padding: 0 0 15px 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.food_images {
+    width: 200px;
+    height: 160px;
+    border-radius: 6px;
+    margin: 0 auto;
+}
+
+.food_images:hover {
+    animation: food_images.6s;
+  }
+  
+  @keyframes food_images{
+    0%{
+      transform: translate(0);
+    }
+    20%{
+      transform: translate(-6px);
+    }
+    40%{
+      transform: translate(0);
+    }
+    60%{
+      transform: translate(-3px);
+    }
+    80%{
+      transform: translate(0);
+    }
+  }
+
+.recipe_name {
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.recipe_name:hover {
+    color: white
+}
+
+/*=============== DETAIL PAGE ===============*/
+.details_modal {
+    width: 55%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 5px 10px 15px;
+    margin: 0 auto;
+    margin-top: 23vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.details_body {
+    display: flex;
+}
+
+.details_short,
+.details_long {
+    padding: 8px;
+}
+
+.details_short img {
+    border-radius: 8px;
+}
+
+/*=============== LOGIN ===============*/
+.login_btn,
+.logout_btn,
+.back-home_btn {
+  display: block;
+  position: inherit;
+  border: 2px solid white;
+  margin: auto;
+  width: fit-content;
+  font-size: 16px;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
+  }
+
+.login_btn:hover,
+.logout_btn,
+.back-home_btn:hover {
+    background: linear-gradient(0deg, rgba(34,195,182,1) 0%, rgba(45,53,253,1) 100%);
+}
+
+#error_login {
+  margin: 0 auto;
+  text-align: center;
+  color: azure;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,66,0.9724264705882353) 35%, rgba(255,98,0,1) 100%);
+  padding: 10px;
+  border-radius: 10px;
+  }
+
+
+  /*=============== SEARCH ===============*/
+.form_input {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  }
+
+  .form_search_input,
+  .form_search {
+      background-color: beige;
+      height: 14px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+      width: 200px;
+      padding: 10px;
+  }
+  
+  .form_data {
+      color: white;
+  }
+  
+  .search_results {
+      background-color: rgb(232, 211, 187);
+      border-radius: 7px;
+      font-family: 'Roboto Mono', 'Calibri', 'Trebuchet MS', sans-serif;
+      font-size: 10px;
+      width: 200px;
+      padding: 20px;
+      position: fixed;
+      margin: 0 auto;
+  }
