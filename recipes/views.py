@@ -60,13 +60,26 @@ def records(request):
 
         qs = qs.filter(id__in=id_searched)
 
-        if qs:
+        if qs:  # if the data is found, convert the queryset values to pandas dataframe
             recipe_df = pd.DataFrame(qs.values())
-            chart = get_chart(chart_type, recipe_df,
-                              labels=recipe_df['name'].values)
+            chart = get_chart(chart_type, recipe_df)
 
+            recipe_df = pd.DataFrame(qs.values(), columns=['id', 'name'])
+
+            links = []
+
+            for e, nam in enumerate(recipe_df['name']):
+                nam = '<a href="/list/' + \
+                    str(recipe_df['id'][e]) + '">' + str(nam) + '</a>'
+                links.append(nam)
+
+            recipe_df['name'] = links
+
+            # convert the dataframe to HTML
             recipe_df = recipe_df.to_html(index=False, escape=False)
 
+    # print(recipe_genre)
+    # pack up data to be sent to template in the context dictionary
     context = {
         'form': form,
         'recipe_df': recipe_df,

@@ -52,7 +52,7 @@
             border: 1px solid black;
             box-shadow: 2px 4px 8px black;
             margin: 10px;
-            width: 80px;
+            width: 100px;
             font-size: 16px;
             background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
             border-radius: 5px;
@@ -70,10 +70,14 @@
 </head>
 <body>
     <div class="nav-bar">
-
+        
         <div>
             <a href="{%url 'login' %}" class="logout_btn">Login</a>
-        </div>
+        </div>  
+
+        <div>
+            <button onclick="goBack()" class="logout_btn">Back</button>
+        </div> 
 
     </div>
     <div class="container">
@@ -82,7 +86,14 @@
         <p>I am originally from Thailand, but I have been living in Germany for the past 5 years.</p>
         <p>I am excited to share my love of Thai food with you through this website. I hope you enjoy my recipes!</p>
         <img src="media/profile.png" alt="Kate photo" width="230" height="400">
-      </div>      
-      
+    </div>     
+    <script src="{% static 'recipe/scripts/script.js' %}"></script>  
 </body>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+    
+</script>
 </html>

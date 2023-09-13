@@ -24,7 +24,7 @@ def get_graph():
 def get_chart(chart_type, data, **kwargs):
     plt.switch_backend('AGG')
 
-    fig = plt.figure(figsize=(6, 3))
+    fig = plt.figure(figsize=(12, 5))
 
     if chart_type == '#1':
         # no_ingredients = data['len(ingredients)']
