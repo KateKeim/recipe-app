@@ -28,6 +28,4 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('create/', create_view, name='create'),
     path('about', about_view, name='about'),
-]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
