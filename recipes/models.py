@@ -9,7 +9,8 @@ class Recipe(models.Model):
     cooking_time = models.IntegerField(help_text='in minutes')
     ingredients = models.TextField()
     description = models.TextField(default='description')
-    pic = models.ImageField(upload_to='recipes', default='food-photo.jpg')
+    pic = models.ImageField(upload_to='recipes',
+                            default='food-photo.jpg')
 
     def calculate_difficulty(self):
         difficulty = None
